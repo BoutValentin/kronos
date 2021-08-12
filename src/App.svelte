@@ -31,15 +31,16 @@
 
   const handle_click_unlock = () => {
     if (should_unlock_audio) {
-      good_audio.play();
-      good_audio.pause();
+      const old_src = good_audio.src;
+      good_audio.src = "";
+      good_audio.src = old_src;
       good_audio.currentTime = 0;
       should_unlock_audio = false;
     }
   };
 </script>
 
-<svelte:window on:click={handle_click_unlock} />
+<svelte:window on:click={handle_click_unlock} on:touchstart={handle_click_unlock} />
 
 <Header />
 <main>

@@ -16,5 +16,9 @@ export const get_one_audio = (src = DEFAULT_AUDIO_SRC) => {
 
 export const make_a_good_bip = () => {
     if (!audio.get(GOOD_BIP_SRC)) create_audio(GOOD_BIP_SRC);
-    audio.get(GOOD_BIP_SRC).play();
+    const audi = audio.get(GOOD_BIP_SRC);
+    audi.currentTime = 0;
+    audi.volume = 1;
+    console.log(audi.volume)
+    audi.play();
 };
