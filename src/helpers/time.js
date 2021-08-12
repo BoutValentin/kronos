@@ -1,4 +1,11 @@
-const SECONDES_IN_ONE_MINUTES = 60;
+export const SECONDES_IN_ONE_MINUTES = 60;
+export const MIN_MINUTES_SECONDES = 0;
+export const MAX_MINUTES_SECONDES = 59;
+
+export const DEFAULT_TIME = {
+  second: 0,
+  minute: 0,
+};
 
 export const minutes_to_seconds = (minutes) => {
     if (!minutes || minutes < 0) return 0;
